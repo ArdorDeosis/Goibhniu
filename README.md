@@ -12,6 +12,12 @@ This project has room for improvement. Here's a list of things one could add:
 
 # Notes
 
+I have placed notes for you, dear reader, throughout the code starting with `// NOTE:` like so:
+
+```csharp
+// NOTE: this is a note
+```
+
 ### Naming Conventions
 - Leading underscores for private member variables: I don't like them. They look janky and interrupt my reading flow. With modern IDEs there is no reason to mark private fields as such.
 - Async suffix on async methods: Similar to the point above. We live in a world where a lot of code is async. *If* we ever have the choice between sync and async methods, the async should be the default. But then why should I mark the default? With modern IDEs, I don't need to add this suffix in the name to identify async methods.
