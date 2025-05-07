@@ -10,12 +10,52 @@ This project has room for improvement. Here's a list of things one could add:
 - Integration Tests
 - automated test runs via github actions
 
+# Documentation
+
+## Available Endpoints
+
+The `ProductAnalysisController` currently exposes the following endpoints:
+
+1. **Get Price Extremes**
+   - **Route:** `GET /api/analysis/price-extremes`
+   - **Parameters:**
+     - `url` (string): The URL to fetch product data from.
+   - **Description:** Retrieves the products with the highest and lowest prices.
+
+2. **Get Exact Price**
+   - **Route:** `GET /api/analysis/exact-price`
+   - **Parameters:**
+     - `url` (string): The URL to fetch product data from.
+     - `price` (decimal): The exact price to look for.
+   - **Description:** Finds products with articles that match the exact given price.
+
+3. **Get Most Bottles**
+   - **Route:** `GET /api/analysis/most-bottles`
+   - **Parameters:**
+     - `url` (string): The URL to fetch product data from.
+   - **Description:** Retrieves the product that contains the most bottles among its articles.
+
+## Configuration Options
+
+The application provides several configuration options that can be set in the `appsettings.json` file
+
+### `DataRepresentation.DataRepresentationType` 
+Configures how data is represented in client-facing outputs. Options:
+- `Raw`: Returns products as they are read, incl. all articles.
+- `OnlyRelevantArticles` **(default)**: Returns products containing only their relevant articles (e.g. when filtering for price, only the article with the matching price will be returned)
+
+### `DataSources.AllowProductionData`
+**(bool)** Configures how fetched data is deserialized. Option:
+- `false`: Only data formatted like the example I got is accepted.
+- `true`: The deserialization strategy is adjusted to detect URLs pointing to production data (e.g. `.../elastic-query-portal/46/v1/articles?list=...`) and handle the slightly different formatted data from these sources.
+
+
 # Notes
 
 I have placed notes for you, dear reader, throughout the code starting with `// NOTE:` like so:
 
 ```csharp
-// NOTE: this is a note
+// NOTE: this explains my thoughts and decision process
 ```
 
 ### Naming Conventions
