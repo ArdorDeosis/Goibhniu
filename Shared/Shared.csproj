@@ -1,0 +1,8 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>Goibhniu.Shared</AssemblyName>
+    <RootNamespace>Goibhniu.Shared</RootNamespace>
+  </PropertyGroup>
+
+</Project>

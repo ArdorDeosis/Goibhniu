@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>Goibhniu.Model</AssemblyName>
+    <RootNamespace>Goibhniu.Model</RootNamespace>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+
+</Project>
